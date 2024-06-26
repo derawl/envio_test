@@ -1,9 +1,9 @@
 import { ethers } from "ethers";
-
 export const isContract = async (address: string): Promise<boolean> => {
-  const provider = new ethers.JsonRpcProvider("https://rpc.ankr.com/eth");
-  const code = await provider.getCode(ethers.hexlify(address));
-  return code !== "0x";
+  // const provider = new ethers.JsonRpcProvider("https://rpc.ankr.com/eth");
+  // const code = await provider.getCode(address);
+  // return code !== "0x";
+  return true;
 };
 
 export const getSenderReceiverType = async (
