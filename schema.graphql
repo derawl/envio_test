@@ -1,0 +1,41 @@
+type EventsSummary {
+  id: ID!
+  dai_Transfer: [Dai_Transfer!]! @derivedFrom(field: "eventsSummary")
+  dai_TransferCount: BigInt!
+  fiatTokenV2_2_Transfer: [FiatTokenV2_2_Transfer!]!
+    @derivedFrom(field: "eventsSummary")
+  fiatTokenV2_2_TransferCount: BigInt!
+  tetherToken_Transfer: [TetherToken_Transfer!]!
+    @derivedFrom(field: "eventsSummary")
+  tetherToken_TransferCount: BigInt!
+}
+
+type Dai_Transfer {
+  id: ID!
+  src: String!
+  dst: String!
+  wad: BigInt!
+  senderIsContract: Boolean!
+  receiverIsContract: Boolean!
+  eventsSummary: String!
+}
+
+type FiatTokenV2_2_Transfer {
+  id: ID!
+  from: String!
+  to: String!
+  value: BigInt!
+  senderIsContract: Boolean!
+  receiverIsContract: Boolean!
+  eventsSummary: String!
+}
+
+type TetherToken_Transfer {
+  id: ID!
+  from: String!
+  to: String!
+  value: BigInt!
+  senderIsContract: Boolean!
+  receiverIsContract: Boolean!
+  eventsSummary: String!
+}
